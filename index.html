@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .dropdown-item {
+      font-family: monospace;
+    }
+  </style>
+  <title>CG_Trabalho01</title>
+</head>
+
+<body>
+  <div class="container p-5">
+
+
+    <div class="row mb-5">
+      <div class="col-6" id="div_01">
+        <h1>Trabalho de CG</h1>
+      </div>
+      <div class="col-6 d-flex align-items-center justify-content-end">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Seções
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#div_02">Transformações Geométricas 2D</a></li>
+            <li><a class="dropdown-item" href="#div_03">Rasterização</a></li>
+            <!--
+            <li><a class="dropdown-item" href="#div_04">DIV 04</a></li>
+            -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="row mb-4">
+      <div class="col-6" id="div_02">
+        <h1>Transformações Geométricas 2D</h1>
+      </div>
+      <div class="col-6 d-flex align-items-center justify-content-end">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Seções
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#div_02_01">Translação</a></li>
+            <li><a class="dropdown-item" href="#div_02_02">Escala</a></li>
+            <li><a class="dropdown-item" href="#div_02_03">Rotação</a></li>
+            <li><a class="dropdown-item" href="#div_02_04">Reflexão</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row mb-1" id="div_02_01">
+      <div class="col-12 mb-2">
+        <h1 class="text-center">Translação</h1>
+      </div>
+      <div class="col-12 mb-2">
+        <h4 class="text-center" id="h4_02_01">(0 , 0)</h4>
+      </div>
+      <div class="col-12 mb-3 d-flex align-items-center justify-content-center">
+        <a class="btn btn-primary mx-1" role="button" id="button_02_01_01">START</a>
+        <a class="btn btn-primary mx-1" role="button" id="button_02_01_02">DO</a>
+        <a class="btn btn-primary mx-1" role="button" id="button_02_01_03">CLEAR</a>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex align-items-center justify-content-center" id="TEST">
+        <!-- Width:  2^8 + 2^9 = 256 + 512 = 768 -->
+        <!-- Height: 2^7 + 2^8 = 128 + 256 = 384 -->
+        <canvas class="border border-dark shadow" id="canvas_02_01" width="768" height="384"></canvas>
+      </div>
+    </div>
+
+
+    <div class="row mb-1" id="div_02_02">
+      <div class="col-12 mb-2">
+        <h1 class="text-center">Escala</h1>
+      </div>
+      <div class="col-12 mb-2">
+        <h4 class="text-center" id="h4_02_02">(0 , 0)</h4>
+      </div>
+      <div class="col-12 mb-3 d-flex align-items-center justify-content-center">
+        <a class="btn btn-primary mx-1" role="button" id="button_02_02_01">START</a>
+        <a class="btn btn-primary mx-1" role="button" id="button_02_02_02">DO</a>
+        <a class="btn btn-primary mx-1" role="button" id="button_02_02_03">CLEAR</a>
+      </div>
+      <div class="col-12 mb-2 d-flex align-items-center justify-content-center">
+        <input type="range" min="0.5" max="1.5" step="0.1" value="1" id="button_02_02_04">
+      </div>
+      <div class="col-12 mb-3">
+        <h5 class="text-center" id="h5_02_02_01">X * 1</h5>
+      </div>
+      <div class="col-12 mb-2 d-flex align-items-center justify-content-center">
+        <input type="range" min="0.5" max="1.5" step="0.1" value="1" id="button_02_02_05">
+      </div>
+      <div class="col-12 mb-3">
+        <h5 class="text-center" id="h5_02_02_02">Y * 1</h5>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex align-items-center justify-content-center">
+        <canvas class="border border-dark shadow" id="canvas_02_02" width="768" height="384"></canvas>
+      </div>
+    </div>
+
+
+    <div class="row mb-1" id="div_02_03">
+      <div class="col-12 mb-2">
+        <h1 class="text-center">Rotação</h1>
+      </div>
+      <div class="col-12 mb-2">
+        <h4 class="text-center" id="h4_02_03">(0 , 0)</h4>
+      </div>
+      <div class="col-12 mb-3 d-flex align-items-center justify-content-center">
+        <a class="btn btn-primary mx-1" role="button" id="button_02_03_01">START</a>
+        <a class="btn btn-primary mx-1" role="button" id="button_02_03_02">DO</a>
+        <a class="btn btn-primary mx-1" role="button" id="button_02_03_03">CLEAR</a>
+      </div>
+      <div class="col-12 mb-2 d-flex align-items-center justify-content-center">
+        <input type="range" min="-15" max="15" step="1" value="0" id="button_02_03_04">
+      </div>
+      <div class="col-12 mb-3">
+        <h5 class="text-center" id="h5_02_03_01">0°</h5>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex align-items-center justify-content-center">
+        <canvas class="border border-dark shadow" id="canvas_02_03" width="768" height="384"></canvas>
+      </div>
+    </div>
+
+
+    <div class="row mb-1" id="div_02_04">
+      <div class="col-12 mb-2">
+        <h1 class="text-center">Reflexão</h1>
+      </div>
+      <div class="col-12 mb-2">
+        <h4 class="text-center" id="h4_02_04">(0 , 0)</h4>
+      </div>
+      <div class="col-12 mb-3 d-flex align-items-center justify-content-center">
+        <a class="btn btn-primary mx-1" role="button" id="button_02_04_01">START</a>
+        <a class="btn btn-primary mx-1" role="button" id="button_02_04_02">X</a>
+        <a class="btn btn-primary mx-1" role="button" id="button_02_04_03">Y</a>
+        <a class="btn btn-primary mx-1" role="button" id="button_02_04_04">X e Y</a>
+        <a class="btn btn-primary mx-1" role="button" id="button_02_04_05">CLEAR</a>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col d-flex align-items-center justify-content-center">
+        <canvas class="border border-dark shadow" id="canvas_02_04" width="768" height="384"></canvas>
+      </div>
+    </div>
+
+
+
+
+    <div class="row mb-4">
+      <div class="col-6" id="div_03">
+        <h1>Rasterização</h1>
+      </div>
+      <div class="col-6 d-flex align-items-center justify-content-end">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Seções
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#div_03_01">Retas - DDA</a></li>
+            <li><a class="dropdown-item" href="#div_03_02">Retas - Bresenham</a></li>
+            <li><a class="dropdown-item" href="#div_03_03">Circunferência - Bresenham</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row mb-1">
+      <div class="col" id="div_03_01">
+        <h1 class="text-center">Retas - DDA</h1>
+      </div>
+    </div>
+    <div class="col-12 mb-2">
+      <h4 class="text-center" id="h4_03_01">(0 , 0)</h4>
+    </div>
+    <div class="col-12 mb-3 d-flex align-items-center justify-content-center">
+      <a class="btn btn-primary mx-1" role="button" id="button_03_01_01">DO</a>
+      <a class="btn btn-primary mx-1" role="button" id="button_03_01_02">CLEAR</a>
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex align-items-center justify-content-center">
+        <canvas class="border border-dark shadow" id="canvas_03_01" width="768" height="384"></canvas>
+      </div>
+    </div>
+
+
+    <div class="row mb-1">
+      <div class="col" id="div_03_02">
+        <h1 class="text-center">Retas - Bresenham</h1>
+      </div>
+    </div>
+    <div class="col-12 mb-2">
+      <h4 class="text-center" id="h4_03_02">(0 , 0)</h4>
+    </div>
+    <div class="col-12 mb-3 d-flex align-items-center justify-content-center">
+      <a class="btn btn-primary mx-1" role="button" id="button_03_02_01">DO</a>
+      <a class="btn btn-primary mx-1" role="button" id="button_03_02_02">CLEAR</a>
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex align-items-center justify-content-center">
+        <canvas class="border border-dark shadow" id="canvas_03_02" width="768" height="384"></canvas>
+      </div>
+    </div>
+
+
+    <div class="row mb-1">
+      <div class="col" id="div_03_03">
+        <h1 class="text-center">Circunferência - Bresenham</h1>
+      </div>
+    </div>
+    <div class="col-12 mb-2">
+      <h4 class="text-center" id="h4_03_03">(0 , 0)</h4>
+    </div>
+    <div class="col-12 mb-3 d-flex align-items-center justify-content-center">
+      <a class="btn btn-primary mx-1" role="button" id="button_03_03_01">DO</a>
+      <a class="btn btn-primary mx-1" role="button" id="button_03_03_02">CLEAR</a>
+    </div>
+    <div class="row mb-5">
+      <div class="col d-flex align-items-center justify-content-center">
+        <canvas class="border border-dark shadow" id="canvas_03_03" width="768" height="384"></canvas>
+      </div>
+    </div>
+
+
+
+
+    <!--
+    <div class="row mb-4">
+      <div class="col-6" id="div_04">
+        <h1>DIV 04</h1>
+      </div>
+      <div class="col-6 d-flex align-items-center justify-content-end">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            DROPDOWN
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#div_04_01">DIV 04-01</a></li>
+            <li><a class="dropdown-item" href="#div_04_02">DIV 04-02</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row mb-1">
+      <div class="col" id="div_04_01">
+        <h1 class="text-center">DIV 04-01</h1>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex align-items-center justify-content-center">
+        <canvas class="border border-dark shadow" id="canvas_04_01" width="768" height="384"></canvas>
+      </div>
+    </div>
+
+
+    <div class="row mb-1">
+      <div class="col" id="div_04_02">
+        <h1 class="text-center">DIV 04-02</h1>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col d-flex align-items-center justify-content-center">
+        <canvas class="border border-dark shadow" id="canvas_04_02" width="768" height="384"></canvas>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col d-flex align-items-center justify-content-center">
+        <a class="btn btn-primary" href="#" role="button">TOPO</a>
+      </div>
+    </div>
+    -->
+
+
+  </div>
+  <script src="./canvas_02_01.js"></script>
+  <script src="./canvas_02_02.js"></script>
+  <script src="./canvas_02_03.js"></script>
+  <script src="./canvas_02_04.js"></script>
+  <script src="./canvas_03_01.js"></script>
+  <script src="./canvas_03_02.js"></script>
+  <script src="./canvas_03_03.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+</body>
+
+</html>
